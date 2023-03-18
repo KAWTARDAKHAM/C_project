@@ -1,13 +1,13 @@
 
 /*append function for int*/
 
-struct dynamicarray
+struct list
 {
     int*arr;
     int len;
     int allocated;
 };
-void append(struct dynamicarray *A,int elem){
+void append(struct list *A,int elem){
     if(A->len==A->allocated){
         A->allocated*=2;
           int*newarr=(int*)malloc(sizeof(int)*(A->allocated));
@@ -22,7 +22,7 @@ void append(struct dynamicarray *A,int elem){
 }
 
 int main(){
-    struct dynamicarray A;
+    struct list A;
     A.len=0;
     A.allocated=1;
     A.arr=(int*)malloc(sizeof(int)*A.allocated);
@@ -35,13 +35,13 @@ int main(){
     return 0;
 }
 /*append function for char*/
-struct dynamicarray
+struct list
 {
     char*arr;
     int len;
     int allocated;
 };
-void append(struct dynamicarray *A,char elem){
+void append(struct list *A,char elem){
     if(A->len==A->allocated){
         A->allocated*=2;
           char*newarr=(char*)malloc(sizeof(char)*(A->allocated));
@@ -56,7 +56,7 @@ void append(struct dynamicarray *A,char elem){
 }
 
 int main(){
-    struct dynamicarray A;
+    struct list A;
     A.len=0;
     A.allocated=1;
     A.arr=(char*)malloc(sizeof(char)*A.allocated);
